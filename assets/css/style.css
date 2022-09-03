@@ -1,0 +1,678 @@
+@charset "UTF-8";
+/** -----------------------------------------------
+  共通
+------------------------------------------------**/
+body {
+	/*下記のCSSはご自身のデザインに合わせて書き換えてください。*/
+	font-size: 16px;
+	line-height: 1.6;
+	color: #333;
+	background-color:#fff;
+	font-family:  YuGothic,'Yu Gothic', Osaka, sans-serif, Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+}
+
+
+
+/** -----------------------------------------------
+  PC :  画面の横幅が641px以上
+------------------------------------------------**/
+
+.example {
+	font-size: 50px;
+	color: #99293D;
+}
+
+
+
+
+/*ここからメディアクエリで各デバイスサイズに書き分けます。
+今回の課題で考慮するのはPCとスマホのみでOKですが、タブレットサイズでのスタイルを書いてもOK！
+また、CSSは上から下に継承されるので、変化させたいところだけ書けばOKです*/
+
+
+/** -----------------------------------------------
+  Smartphone :  画面の横幅が640pxまで
+------------------------------------------------**/
+@media screen and (max-width:640px){
+	.example {
+		font-size: 20px;
+		color: #AD8651;
+	}
+}
+
+/** -----------------------------------
+    ヘッダー
+-------------------------------------**/
+#header {
+  background-color:rgba(255,255,255,0.6);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  width: 170px;
+}
+
+.header-logo a {
+  display: flex;
+}
+
+.gnav-pc-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.gnav-pc li {
+  display: inline;
+  margin-right: 40px;
+}
+
+ul.gnav-pc li a {
+  font-size: 18px;
+  color: #2c2c2c;
+  font-weight: bold;
+	text-decoration: none;
+}
+
+ul.gnav-pc li a:hover {
+  color: #c0e4f2;
+}
+
+#menu-button {
+  display: none;
+}
+
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px) {
+  #header {
+    height: 60px;
+    padding: 0;
+  }
+
+  #header h1 {
+    padding-left: 20px;
+  }
+
+  #header h1 a {
+    display: flex;
+  }
+
+  .gnav-pc-wrap {
+		display: none;
+  }
+
+  #menu-button {
+    display: block;
+    width: 60px;
+    height: 60px;
+    padding: 22px 18px;
+  }
+
+  .menu-button-inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-button-inner span {
+    display: block;
+		height: 2px;
+		width: 100%;
+		background-color: #2c2c2c;
+    position: absolute;
+  }
+
+  .menu-button-inner span:nth-child(1) {
+    top: 0;
+  }
+
+  .menu-button-inner span:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .menu-button-inner span:nth-child(3) {
+    bottom: 0;
+  }
+}
+
+/** -----------------------------------
+    ジャンプ
+-------------------------------------**/
+#anchor1{
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+#anchor2{
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+#anchor3{
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+#anchor4{
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+#anchor5{
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+
+/** -----------------------------------
+    共通
+-------------------------------------**/
+p{
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 48px;
+}
+
+p.col3-text{
+	font-size: 15px;
+	padding: 30px 30px 0 30px;
+	text-align: left;
+	text-align: justify;
+}
+
+.section-inner{
+width: 100%;
+max-width: 960px;
+margin: 0 auto 60px;
+}
+
+.title{
+	font-size: 18px;
+	font-weight: bold;
+}
+.br_pc {
+display: block;
+}
+.br_sp{
+	display: none;
+}
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px) {
+
+	p{
+		font-size: 15px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.section-inner{
+	display: block;
+	width: 100%;
+	/* padding: 0 24px; */
+	margin: 0 auto;
+	}
+
+	.br_pc {
+	display: none;
+	}
+	.br_sp{
+		display: block;
+	}
+	.br_sp2{
+		margin-bottom: 48px;
+	}
+}
+
+
+
+/** -----------------------------------
+    レイアウト (横並び)
+-------------------------------------**/
+.col-2 {
+  display: flex;
+	text-align:
+  justify-content: space-between;
+}
+.col-2 .item {
+  width: calc((100% - 64px)/2);
+}
+
+.col-2 .item .itemtext{
+	padding-top: 23px;
+	text-align: left;
+}
+
+.col-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-3 .item {
+  width: calc((100% - 48px)/3);
+}
+
+
+
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px) {
+  .col-2 {
+    display: block;
+  }
+  .col-2 .item {
+    width: 100%;
+  }
+  .col-3 {
+    display: block;
+
+  }
+  .col-3 .item {
+		width: 100%;
+  }
+}
+
+
+/** -----------------------------------
+   メインビジュアル
+-------------------------------------**/
+.mainvisual-pc{
+	text-align: center;
+}
+.mainvisual-sp{
+	display: none;
+}
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px) {
+	.mainvisual-pc{
+		display: none;
+	}
+	.mainvisual-sp{
+		display:block;
+		text-align: center;
+	}
+	.mainvisual-sp img{
+		width: 100%;
+	}
+}
+
+/** -----------------------------------
+    私たちについて
+-------------------------------------**/
+#about{
+	text-align: center;
+	margin: 60px 0 0;
+}
+
+/** -----------------------------------
+     事業について
+-------------------------------------**/
+#service{
+	text-align: center;
+	padding: 60px;
+	background-color: #fffcdb;
+}
+#service .section-inner{
+	margin-bottom: 0;
+}
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px) {
+	#service{
+		display: block;
+		margin: 48px 0 48px;
+		padding: 48px auto 48px;
+	}
+	#service .section-inner{
+		width: 100%;
+	}
+	#service .col3-text{
+		display: block;
+		padding: 24px 8px 24px;
+	}
+}
+
+/** -----------------------------------
+     仲間募集
+-------------------------------------**/
+#fellow{
+	text-align: center;
+}
+#fellow a{
+	margin: 0 auto;
+	margin-top: 24px;
+}
+.fellow-pc{
+	text-align: center;
+	margin-top: 60px;
+}
+.fellow-sp{
+	display: none;
+}
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px) {
+	.fellow-pc{
+		display: none;
+	}
+	.fellow-sp{
+		display:block;
+		text-align: center;
+	}
+	.fellow-sp img{
+		width: 100%;
+	}
+}
+
+/** -----------------------------------
+     働く環境
+-------------------------------------**/
+#work{
+	text-align: center;
+	margin: 60px;
+}
+#work a{
+	margin: 0 auto;
+	margin-top: 24px;
+}
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px) {
+	#work .col-3 img{
+		margin-bottom: 24px;
+	}
+	.blank{
+		display: none;
+	}
+}
+
+/** -----------------------------------
+     募集職種
+-------------------------------------**/
+.blank{
+	margin: 24px;
+}
+#recruit{
+	margin-bottom: 60px;
+	text-align: center;
+}
+#recruit.title{
+	margin: 60px 0 5px;
+}
+p.card{
+	font-size: 15px;
+	padding: 24px 0 0 108px;
+	text-align: justify;
+}
+.recruit {
+	max-width: 693px;
+	margin: 0 auto 60px auto;
+}
+.space1{
+	word-spacing:142px;
+}
+.space2{
+	word-spacing:127px;
+}
+.space3{
+	word-spacing:104px;
+}
+.space4{
+	word-spacing:142px;
+}
+.space5{
+	word-spacing:82px;
+}
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px){
+	p.card{
+		display: block;
+		padding: 0 24px;
+		text-align: center;
+	}
+}
+
+/** -----------------------------------
+    エントリー
+-------------------------------------**/
+
+#entry {
+	text-align: center;
+	width: 100%;
+	height: 300px;
+	background-position: center;
+	background-image: url(../images/img-entry.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 60px;
+}
+	#entry p{
+		font-weight: bold;
+	}
+
+/** -------- スマホ -------- **/
+@media screen and (max-width: 768px){
+	#entry{
+		width: 100%;
+		height: 300px;
+		background-position: center;
+		background-image: url(../images/img-entry-sp.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding-top: 48px;
+	}
+
+	#entry p{
+		margin-top: 24px;
+	}
+}
+
+/** -----------------------------------
+    フッダー
+-------------------------------------**/
+ #footer{
+	 background-color: #fffcdb;
+	 height: 254px;
+	 text-align: center;
+ }
+  #footer .img{
+		padding: 60px 0 32px 0 ;
+	}
+	 #footer a{
+		text-decoration: none;
+		color: #2c2c2c;
+	}
+	 #footer a:hover {
+ 	 color: #c0e4f2;
+  }
+ p.footer{
+   font-weight: bold;
+	 text-align: center;
+	 margin-bottom: 24px;
+	 display: inline-block;
+ }
+
+ /** -------- スマホ -------- **/
+ @media screen and (max-width: 768px){
+	 #footer .section-inner{
+		 display: block;
+		 background-color: #fffcdb;
+	 }
+	 p.footer{
+		 display: block;
+		 margin-bottom: 5px;
+	 }
+	 p.footer2{
+		 padding-bottom: : 24px;
+	 }
+	 #footer a{
+		 text-decoration: none;
+		 color: #2c2c2c;
+	 }
+	 #footer a:hover {
+	   color: #c0e4f2;
+	 }
+	 #footer .img{
+		display: block;
+		padding-top: 48px;
+	}
+	 #footer .section-inner img{
+		 display: block;
+		 margin: 0 auto;
+	 }
+ }
+
+/** -----------------------------------
+    ボタン
+-------------------------------------**/
+
+/* ボタン共通設定 */
+
+.btn03{
+    /*影の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+    text-align: center;
+    background: transparent;
+	border-radius: 25px;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.2s ease;
+}
+
+/*hoverをした後のボタンの形状*/
+.btn03:hover{
+	border-color:transparent;
+}
+
+/*ボタンの中のテキスト*/
+.btn03 span {
+	font-weight: bold;
+	position: relative;
+	z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+    /*テキストの形状*/
+	display: block;
+    padding: 10px 20px 10px 50px;
+	background:#c0e4f2;
+	border-radius: 25px;
+	color:#fff;
+    /*アニメーションの指定*/
+    transition: all 0.3s ease;
+}
+
+/*== 右下に押し込まれる（立体が平面に） */
+
+/*影の設定*/
+.pushright:before {
+    content: "";
+    /*絶対配置で影の位置を決める*/
+    position: absolute;
+	z-index: -1;
+    top: 4px;
+    left: 4px;
+    /*影の形状*/
+    width: 100%;
+    height: 100%;
+	border-radius: 25px;
+    background-color: #fff8aa;
+}
+
+.pushright.white:before {
+    content: "";
+    /*絶対配置で影の位置を決める*/
+    position: absolute;
+	z-index: 0;
+    top: 4px;
+    left: 4px;
+    /*影の形状*/
+    width: 100%;
+    height: 100%;
+	border-radius: 25px;
+    background-color: #FFF;
+}
+
+
+/*hoverの際にX・Y軸に4pxずらす*/
+.pushright:hover span {
+	background-color: #c0e4f2;
+	color: #fff;
+	transform: translate(4px, 4px);
+}
+
+
+/* ボタン2共通設定 */
+.btn04{
+	margin-top: 23px;
+    /*影の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+    text-align: center;
+    background: transparent;
+	border-radius: 25px;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.2s ease;
+}
+
+/*hoverをした後のボタンの形状*/
+.btn04:hover{
+	border-color:transparent;
+}
+
+/*ボタンの中のテキスト*/
+.btn04 span {
+	position: relative;
+	z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+    /*テキストの形状*/
+	display: block;
+    padding: 5px 20px 5px 50px;
+	background:#fffcdb;
+	border-radius: 25px;
+	color:#2c2c2c;
+	font-weight: 500;
+    /*アニメーションの指定*/
+    transition: all 0.3s ease;
+}
+
+/*== 右下に押し込まれる（立体が平面に） */
+
+/*影の設定*/
+.pushright2:before {
+    content: "";
+    /*絶対配置で影の位置を決める*/
+    position: absolute;
+	z-index: -1;
+    top: 4px;
+    left: 4px;
+    /*影の形状*/
+    width: 100%;
+    height: 100%;
+	border-radius: 25px;
+    background-color: #c0e4f2;
+}
+
+/*hoverの際にX・Y軸に4pxずらす*/
+.pushright2:hover span {
+	background-color: #fffcdb;
+	color: #2c2c2c;
+	transform: translate(4px, 4px);
+}
